@@ -9,7 +9,17 @@
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
 	<title>ChatGPT Web</title>
 </head>
-
+<script src="https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js"></script>
+<script>
+const aegis = new Aegis({
+	id: '3oydwsLo1jGq2oWxwQ', // 上报 id
+	// uin: 'xxx', // 用户唯一 ID（可选）
+	reportApiSpeed: false, // 接口测速
+	reportAssetSpeed: false, // 静态资源测速
+	spa: true, // spa 应用页面跳转的时候开启 pv 计算
+	// hostUrl: 'https://rumt-us.com'
+});
+</script>
 <body class="dark:bg-black">
 	<div id="app">
 		<style>

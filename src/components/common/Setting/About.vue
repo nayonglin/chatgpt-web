@@ -39,7 +39,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <NSpin :show="loading">
+  <!-- <NSpin :show="loading">
     <div class="p-4 space-y-4">
       <h2 class="text-xl font-bold">
         Version - {{ pkg.version }}
@@ -71,5 +71,5 @@ onMounted(() => {
       <p>{{ $t("setting.socks") }}：{{ config?.socksProxy ?? '-' }}</p>
       <p>{{ $t("setting.httpsProxy") }}：{{ config?.httpsProxy ?? '-' }}</p>
     </div>
-  </NSpin>
+  </NSpin> -->
 </template>
