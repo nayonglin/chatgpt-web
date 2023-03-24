@@ -123,6 +123,10 @@ function handleImportButtonClick(): void {
 <template>
   <div class="p-4 space-y-5 min-h-[200px]">
     <div class="space-y-6">
+      <h2 class="text-xl font-bold">
+        反馈或建议可以加微信 xiaoshun666222
+        <!-- Version - {{ pkg.version }} -->
+      </h2>
       <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.avatarLink') }}</span>
         <div class="flex-1">
