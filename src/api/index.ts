@@ -37,6 +37,26 @@ export function fetchChatAPIProcess<T = any>(
   })
 }
 
+export function fetch0607<T = any>(
+  params: {
+    prompt: string
+    options?: { conversationId?: string; parentMessageId?: string }
+    signal?: GenericAbortSignal
+    onDownloadProgress?: (progressEvent: AxiosProgressEvent) => void },
+) {
+  const settingStore = useSettingStore()
+  // debugger;
+  
+  return post<T>({
+    url: '/chat-ai0607',
+    data: { prompt: params.prompt, options: params.options, systemMessage: settingStore.systemMessage },
+    signal: params.signal,
+    onDownloadProgress: params.onDownloadProgress,
+  })
+}
+
+
+
 export function fetchSession<T>() {
   return post<T>({
     url: '/session',

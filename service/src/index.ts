@@ -5,6 +5,7 @@ import { chatConfig, chatReplyProcess, currentModel } from './chatgpt'
 import { auth } from './middleware/auth'
 import { limiter } from './middleware/limiter'
 import { isNotEmptyString } from './utils/is'
+import axios from 'axios'
 
 const app = express()
 const router = express.Router()
@@ -42,6 +43,24 @@ router.post('/chat-process', [auth, limiter], async (req, res) => {
     res.end()
   }
 })
+
+router.post('/chat-ai0607', [auth, limiter], async (req, res) => {
+  try {
+    const { data } = await axios.post('http://52.237.126.104:3002/enterprise/chat',  {
+      access_token: '6236bbad-55a9-4529-af32-81f0fe806575',
+      user_id: req.body?.options?.conversationId,
+      prompt: req.body?.prompt,
+  },
+  {
+      headers: {
+          'Content-Type': 'application/json',
+      },
+  },);
+    res.send(data);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
 
 router.post('/config', auth, async (req, res) => {
   try {
