@@ -46,7 +46,7 @@ router.post('/chat-process', [auth, limiter], async (req, res) => {
 
 router.post('/chat-ai0607', [auth, limiter], async (req, res) => {
   try {
-    const { data } = await axios.post('http://52.237.126.104:3002/enterprise/chat',  {
+    const { data } = await axios.post('https://0607studio.org:3002/enterprise/chat',  {
       access_token: '6236bbad-55a9-4529-af32-81f0fe806575',
       user_id: req.body?.options?.conversationId,
       prompt: req.body?.prompt,
